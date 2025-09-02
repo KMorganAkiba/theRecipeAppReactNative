@@ -1,7 +1,9 @@
 import { useSignIn } from "@clerk/clerk-expo";
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { View, Text, Alert } from 'react-native';
+import { View, Text, Alert, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+
+import { Image } from "expo-image";
 
 import { authStyles } from "../../assets/styles/auth.styles";
 
@@ -47,7 +49,27 @@ const SignInScreen = () => {
 
   return (
     <View style={ authStyles.container}>
-      <Text>SignInScreen</Text>
+    <KeyboardAvoidingView
+      style={authStyles.keyboardView}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      >
+
+      <ScrollView 
+        contentContainerStyle={authStyles.scrollContent}
+        showsVerticalScrollIndicator={false}
+        >
+
+        <View style={authStyles.imageContainer}>
+          <Image 
+            source={require("../../assets/images/i1.png")}
+            style={authStyles.image}
+            contentFit="contain"
+          />
+
+        </View>
+
+      </ScrollView>
+    </KeyboardAvoidingView>
     </View>
   );
 };
