@@ -1,110 +1,93 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import { COLORS } from "../../constants/colors";
 
-export const styles = StyleSheet.create({
+const { height } = Dimensions.get("window");
+
+export const authStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
-    padding: 20,
-    justifyContent: "center",
   },
-  illustration: {
-    width: "100%",
-    height: 310,
-    resizeMode: "contain",
+  keyboardView: {
+    flex: 1,
+  },
+  scrollContent: {
+    flexGrow: 1,
+    paddingHorizontal: 24,
+    paddingTop: 40,
+  },
+  imageContainer: {
+    height: height * 0.3,
+    marginBottom: 30,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  image: {
+    width: 320,
+    height: 320,
   },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: "bold",
     color: COLORS.text,
-    marginVertical: 15,
     textAlign: "center",
+    marginBottom: 40,
   },
-  input: {
-    backgroundColor: COLORS.white,
-    borderRadius: 12,
-    padding: 15,
-    marginBottom: 16,
-    borderWidth: 1,
-    borderColor: COLORS.border,
+  subtitle: {
+    fontSize: 16,
+    color: COLORS.textLight,
+    textAlign: "center",
+    marginBottom: 30,
+  },
+  formContainer: {
+    flex: 1,
+  },
+  inputContainer: {
+    marginBottom: 20,
+    position: "relative",
+  },
+  textInput: {
     fontSize: 16,
     color: COLORS.text,
-  },
-  errorInput: {
-    borderColor: COLORS.expense,
-  },
-  button: {
-    backgroundColor: COLORS.primary,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    backgroundColor: COLORS.background,
     borderRadius: 12,
-    padding: 16,
-    alignItems: "center",
-    marginTop: 10,
-    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  eyeButton: {
+    position: "absolute",
+    right: 16,
+    top: 16,
+    padding: 4,
+  },
+  authButton: {
+    backgroundColor: COLORS.primary,
+    paddingVertical: 18,
+    borderRadius: 12,
+    marginTop: 20,
+    marginBottom: 30,
+  },
+  buttonDisabled: {
+    opacity: 0.7,
   },
   buttonText: {
-    color: COLORS.white,
-    fontSize: 18,
-    fontWeight: "600",
-  },
-  footerContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 8,
-  },
-  footerText: {
-    color: COLORS.text,
     fontSize: 16,
+    fontWeight: "600",
+    color: COLORS.white,
+    textAlign: "center",
+  },
+  linkContainer: {
+    alignItems: "center",
+    paddingBottom: 20,
   },
   linkText: {
+    fontSize: 16,
+    color: COLORS.textLight,
+  },
+  link: {
     color: COLORS.primary,
-    fontSize: 16,
     fontWeight: "600",
-  },
-  verificationContainer: {
-    flex: 1,
-    backgroundColor: COLORS.background,
-    padding: 20,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  verificationTitle: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: COLORS.text,
-    marginBottom: 20,
-    textAlign: "center",
-  },
-  verificationInput: {
-    backgroundColor: COLORS.white,
-    borderRadius: 12,
-    padding: 15,
-    marginBottom: 16,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    fontSize: 16,
-    color: COLORS.text,
-    width: "100%",
-    textAlign: "center",
-    letterSpacing: 2,
-  },
-
-  // 🔴 Error styles
-  errorBox: {
-    backgroundColor: "#FFE5E5",
-    padding: 12,
-    borderRadius: 8,
-    borderLeftWidth: 4,
-    borderLeftColor: COLORS.expense,
-    marginBottom: 16,
-    flexDirection: "row",
-    alignItems: "center",
-    width: "100%",
-  },
-  errorText: {
-    color: COLORS.text,
-    marginLeft: 8,
-    flex: 1,
-    fontSize: 14,
   },
 });
