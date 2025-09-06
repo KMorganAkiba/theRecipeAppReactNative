@@ -87,6 +87,18 @@ export const MealAPI = {
     }
   },
 
+  // filter by area
+  filterByArea: async(area) => {
+    try {
+      const response = await fetch(`${BASE_URL}/filter.php?a=${encodeURIComponent(area)}`);
+      const data = await response.json();
+      return data.meals || [];
+    } catch (error) {
+      console.error("Error filtering by area:", error);
+      return[];
+    }
+  },
+
   // transform TheMealDB meal data to our app format
   transformMealData: (meal) => {
     if (!meal) return null;
